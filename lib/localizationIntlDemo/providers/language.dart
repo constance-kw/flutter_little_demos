@@ -27,20 +27,6 @@ class LanguageModel with ChangeNotifier {
     getStorageLanguage(defaultLanguage);
   }
 
-  String formatLang(String lang){
-    String language = "en";
-    switch (lang) {
-      case "zh_Hans_CN":
-        language = "zh";
-        break;
-      case "zh_Hant_HK":
-      case "zh_Hant_TW":
-        language = "zh_HK";
-        break;
-    }
-    return language;
-  }
-
   Future<void> getStorageLanguage(defaultLanguage) async{
     // get system language code
     // var _sysLng = ui.window.locale.languageCode;    // 这种方法有缺陷，可以监听localeResolutionCallback第一次的值
